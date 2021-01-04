@@ -1,0 +1,15 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  
+  
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "serve": "docsify serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
