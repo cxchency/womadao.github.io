@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <script>
+    var _hmt = _hmt || [];
+    window._hmt = _hmt;
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ab8022358a69f427b48f387477f6b306";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js', { scope: '/' }).then(function (registration) {
+        // 注册成功
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function (err) {
+        // 注册失败 :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+  </script>
   <link rel="stylesheet" href="./lib/themes/vue.css">
-  
+
   <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css"-->
 </head>
-<body data-page="../Readme.md" class="ready sticky">
+
+<body>
   <div id="app"></div>
   <script>
     window.$docsify = {
@@ -19,14 +42,14 @@
       search: {
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         paths: ['Readme'], // or 'auto'
-        placeholder: '搜索',
+        placeholder: '🔍搜索',
 
         // 支持本地化
 
-        noData: '好像没有找到呢',
+        noData: '好像没有找到呢😥',
 
         // 支持本地化
-        
+
         // 搜索标题的最大程级, 1 - 6
         depth: 6
       },
@@ -39,6 +62,15 @@
   <!-- Docsify v4 -->
   <script src="./lib/docsify.js"></script>
   <script src="./lib/plugins/copy_code.js"></script>
-  
+  <style type="text/css">
+    .content {
+      overflow: auto;
+    }
+
+    #main {
+      overflow: auto;
+    }
+  </style>
 </body>
+
 </html>
